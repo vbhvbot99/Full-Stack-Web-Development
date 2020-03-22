@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	fetch("./parse.json").then(function(data) {
+	return data.json();
+	}).then(function(data){
+		var n = data.body.Recommendations.length;
+		rname  = "";
+		for(i=0;i<n;i++)
+			rname += "<br>" + data.body.Recommendations[i].RestaurantName
+		document.getElementById('restaurantName').innerHTML = rname;
+	});	
+	</script>
+</head>
+<body>
+<div style="border: 100px">
+	<h2 style="color: blue">Ques2-</h2>
+	<h3>Resturant Name</h3>
+	<p id = "restaurantName">
+		
+	</p>
+</div>
+</body>
+</html>
